@@ -5,18 +5,21 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
 public class ClickButton {
     public ClickButton(){
 
     }
 
-    public static <Select> void main(String[] args) {
+    public static <Select> void main(String[] args) throws FileNotFoundException {
         System.setProperty("Webdriver.chrome.driver","E:\\Selenium\\Driver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         String baseUrl = "https://www.testleaf.com/";
         driver.get(baseUrl);
 
-
+        FileInputStream file = new FileInputStream("");
         WebElement course = driver.findElement(By.xpath("//*[@id=\'main-menu\']/div/ul/li[2]/a"));
         course.click();
         WebElement dev = driver.findElement(By.xpath("/html/body/section[2]/div[2]/ul[1]/li[3]/a"));
